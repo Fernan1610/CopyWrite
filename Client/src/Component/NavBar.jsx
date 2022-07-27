@@ -2,7 +2,7 @@ import React from "react";
 import {useState}from "react";
 import axios from 'axios';
 import style from "./Style/NavBar.module.css"
-import bootstrap from "bootstrap";
+
 export default function NavBar ({list,setList}){
     const [send,setSend]=useState("")
 
@@ -14,7 +14,7 @@ export default function NavBar ({list,setList}){
     }
     async function handleSubmit(e){
         e.preventDefault();
-        const {data}= await axios(`http://localhost:3000/iecho?text=${send}`);
+        const {data}= await axios(`http://localhost:3001/iecho?text=${send}`);
         document.getElementById("searchInput").value="";
         return setList([...list,data]);
 
@@ -22,15 +22,24 @@ export default function NavBar ({list,setList}){
     }
     return(
         
-         <nav  >
-         <div className={style.styleNav} >
-             <a className="navbar-brand">CopyWrite</a>
+                <nav class="navbar bg-danger">
+                    <div class="container-fluid">
+                        <a class="navbar-brand">CopyWrite</a>
+                        <form class="d-flex" onSubmit={handleSubmit} >
+                            <input id= "searchInput" class="form-control me-2" type="text" placeholder="text.." aria-label="text.." onChange={handleChange}/>
+                            <button class="btn btn-primary" type="submit">Send</button>
+                         </form>
+                     </div>
+                </nav>
+    //      <nav  >
+    //      <div className={style.styleNav} >
+    //          <a className="navbar-brand">CopyWrite</a>
              
-              <form className={style.form}  onSubmit={handleSubmit}>
-                  <input id="searchInput" className={style.input} type="text" placeholder="Text" aria-label="Text" onChange={handleChange} />
-                  <button className={style.button} type="submit"  >Send</button>
-              </form>
-          </div>
-     </nav>
+    //           <form className={style.form}  onSubmit={handleSubmit}>
+    //               <input id="searchInput" className={style.input} type="text" placeholder="Text" aria-label="Text" onChange={handleChange} />
+    //               <button className={style.button} type="submit"  >Send</button>
+    //           </form>
+    //       </div>
+    //  </nav>
      )
 }

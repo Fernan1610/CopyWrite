@@ -7,17 +7,21 @@ export default function Home() {
     const [list, setList] = useState([]);
     var count =0
     return (
-        <div>
+        <div className=" bg-secondary w-100 h-100 ">
 
             <NavBar list={list} setList={setList}></NavBar>
 
 
-            <div className={style.styleForm}>
-                <ul>
+            <div className="container ">
+                    
+                    <h2 className="text-left ">Result:</h2>
+
+                
+                <ul className="list-group bg-light md-4">
                     {
                         list.map((el) => (
 
-                            <li key={count++}>{el.text}   - Palindromo  {el.palindrome?"✅" : "❌"}</li>
+                            <li className="list-group-item m-3 border-secondary border " key={count++}>{el.text}   - Palindromo  {el.palindrome?"✅" : "❌"}</li>
                         ))
                         
                     }
