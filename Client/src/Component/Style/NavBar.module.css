@@ -1,0 +1,29 @@
+.styleNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: red;
+    height: 3rem;
+    align-items: center;
+    margin-top: rem;
+
+}
+
+.input{
+    width: 25rem;
+    height: 2rem;
+    border-radius: 1.5rem;
+
+}
+
+.form{
+    display: flex;
+    width: 33rem;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.button{
+    background-color: blue;
+    color: white;
+    border-radius: 15%;
+}

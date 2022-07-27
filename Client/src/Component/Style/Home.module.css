@@ -1,0 +1,15 @@
+html{
+    background-color: rgb(171, 170, 170);
+}
+.styleForm{
+    background-color: rgb(253, 253, 253);
+    height: 60rem;
+    width: 50rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: space-around;
+    align-items: flex-start;
+    margin-left: 24rem;
+    margin-top: 2rem;
+}
