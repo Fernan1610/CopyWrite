@@ -1,7 +1,7 @@
 import React from "react";
 import {useState}from "react";
 import axios from 'axios';
-import style from "./Style/NavBar.module.css"
+
 
 export default function NavBar ({list,setList}){
     const [send,setSend]=useState("")
@@ -14,7 +14,7 @@ export default function NavBar ({list,setList}){
     }
     async function handleSubmit(e){
         e.preventDefault();
-        const {data}= await axios(`http://localhost:3001/iecho?text=${send}`);
+        const {data}= await axios(`https://back-copy-write.herokuapp.com/iecho?text=${send}`);
         document.getElementById("searchInput").value="";
         return setList([...list,data]);
 
