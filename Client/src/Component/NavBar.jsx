@@ -25,6 +25,7 @@ export default function NavBar ({list,setList}){
          <nav  >
          <div className={style.styleNav} >
              <a className="navbar-brand">CopyWrite</a>
+             
               <form className={style.form}  onSubmit={handleSubmit}>
                   <input id="searchInput" className={style.input} type="text" placeholder="Text" aria-label="Text" onChange={handleChange} />
                   <button className={style.button} type="submit"  >Send</button>
